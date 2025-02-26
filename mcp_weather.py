@@ -22,6 +22,10 @@ async def get_coordinates(city: str) -> Dict:
             return {"lat": location["latitude"], "lon": location["longitude"]}
 
 @mcp.tool()
+async def test_echo() -> Dict:
+    return {"message": "Hello from WeatherService!"}
+
+@mcp.tool()
 async def get_weather(city: str) -> Dict:
     """Fetch current weather data for a given city."""
     coordinates = await get_coordinates(city)
